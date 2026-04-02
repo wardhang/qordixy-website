@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #0A1F44;
+  --color-navy-dark: #060f22;
+  --color-navy-mid: #112347;
+  --color-navy-light: #1a3460;
+  --color-cyan: #00DDEB;
+  --color-cyan-dark: #00b8c4;
+  --color-cyan-glow: rgba(0, 221, 235, 0.15);
+  --color-white: #FFFFFF;
+  --color-grey-light: #f4f6f9;
+  --color-grey: #8a9ab5;
+  --color-grey-mid: #d0d9e8;
+
+  --font-heading: var(--font-montserrat);
+  --font-body: var(--font-roboto);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #0A1F44;
+  font-family: var(--font-roboto), 'Open Sans', sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+}
+
+/* Geometric grid background pattern */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 221, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 221, 235, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Subtle hexagonal dot pattern */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, rgba(0, 221, 235, 0.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Cyan glow effect */
+.cyan-glow {
+  box-shadow: 0 0 40px rgba(0, 221, 235, 0.2), 0 0 80px rgba(0, 221, 235, 0.08);
+}
+
+.cyan-text-glow {
+  text-shadow: 0 0 30px rgba(0, 221, 235, 0.5);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 12px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 221, 235, 0.5), rgba(0, 221, 235, 0.05), rgba(0, 221, 235, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Service card hover */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1F44;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00DDEB;
+  border-radius: 3px;
+}
