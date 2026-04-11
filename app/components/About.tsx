@@ -61,22 +61,14 @@ export default function About() {
             <div className="relative z-10 w-full max-w-xs sm:max-w-sm">
               <div className="gradient-border bg-[#112347] rounded-2xl p-6 sm:p-8 text-center">
                 {/* Abstract icon */}
-                <div className="flex justify-center mb-6" aria-hidden="true">
-                  <svg width="80" height="80" viewBox="0 0 48 48" fill="none">
-                    <polygon points="24,3 42,13.5 42,34.5 24,45 6,34.5 6,13.5" stroke="#00DDEB" strokeWidth="1" fill="none" opacity="0.3" />
-                    <polygon points="24,10 37,17.5 37,30.5 24,38 11,30.5 11,17.5" stroke="#00DDEB" strokeWidth="1.5" fill="none" opacity="0.7" />
-                    <polygon points="24,17 30,20.5 30,27.5 24,31 18,27.5 18,20.5" stroke="#00DDEB" strokeWidth="1" fill="rgba(0,221,235,0.1)" />
-                    <circle cx="24" cy="24" r="3" fill="#00DDEB" />
-                    <line x1="24" y1="21" x2="24" y2="10" stroke="#00DDEB" strokeWidth="1.5" />
-                    <line x1="21.4" y1="21.5" x2="14" y2="17" stroke="#00DDEB" strokeWidth="1" opacity="0.5" />
-                    <line x1="26.6" y1="21.5" x2="34" y2="17" stroke="#00DDEB" strokeWidth="1" opacity="0.5" />
-                    <circle cx="24" cy="10" r="1.5" fill="#00DDEB" />
-                    <circle cx="37" cy="17.5" r="1" fill="#00DDEB" opacity="0.6" />
-                    <circle cx="11" cy="17.5" r="1" fill="#00DDEB" opacity="0.6" />
-                    <circle cx="37" cy="30.5" r="1" fill="#00DDEB" opacity="0.4" />
-                    <circle cx="11" cy="30.5" r="1" fill="#00DDEB" opacity="0.4" />
-                    <circle cx="24" cy="38" r="1.5" fill="#00DDEB" opacity="0.5" />
-                  </svg>
+                <div className="flex justify-center mb-4" aria-hidden="true">
+                  <img
+                    src="/qordixy-icon.svg"
+                    alt=""
+                    width={96}
+                    height={96}
+                    className="block"
+                  />
                 </div>
 
                 <h3 className="font-heading font-bold text-white text-xl mb-2">QORDIXY</h3>

@@ -4,6 +4,13 @@ import { useEffect, useRef } from "react";
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const scrollToNextSection = () => {
+    const el = document.getElementById("services");
+    if (!el) return;
+
+    const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    el.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -170,12 +177,17 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" aria-hidden="true">
+      <button
+        type="button"
+        onClick={scrollToNextSection}
+        aria-label="Scroll to services section"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00DDEB] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A1F44]"
+      >
         <span className="text-white/30 text-xs uppercase tracking-widest font-heading hidden sm:block">Scroll</span>
         <svg className="w-5 h-5 text-[#00DDEB]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
         </svg>
-      </div>
+      </button>
     </section>
   );
 }

@@ -1,0 +1,42 @@
+QORDIXY — cPanel deployment (Next.js standalone)
+================================================
+
+1) On your machine (or CI), from the project root:
+
+   npm ci
+   npm run build:cpanel
+
+   This runs `next build` (standalone output), copies `public/` and
+   `.next/static/` into `.next/standalone/`, adds this file + `env.example`,
+   and creates `qordixy-cpanel-deploy.zip` in the project root — ready to upload.
+
+2) (Optional) Manual zip instead: zip the CONTENTS of `.next/standalone/`:
+
+   cd .next/standalone && zip -r ../../my-deploy.zip .
+
+3) On the server (cPanel with Node.js Application Manager, or SSH):
+
+   - Application root: the folder where you extracted the zip (must contain
+     `server.js` and `package.json` at the top level).
+   - Startup file / command: `server.js` (or the UI may say "Application URL"
+     and run `node server.js` — follow your host’s Node app wizard).
+   - Node version: use the current LTS (20 or 22) if offered.
+   - Environment variables (Application Manager → Environment Variables):
+
+     NODE_ENV=production
+     PORT=(often assigned automatically; do not hardcode if the host sets it)
+
+     Copy from your local `.env.local` as needed:
+
+     SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+     CONTACT_TO_EMAIL (optional; defaults in code if unset)
+
+4) Why not only “upload HTML” to public_html?
+
+   This site uses a server API (`/api/contact`). A plain static export would
+   not run that route. The standalone Node bundle keeps the contact form
+   working as long as SMTP env vars are set and outbound SMTP is allowed.
+
+5) If your host only allows PHP/static files in public_html and no Node.js,
+   you would need a different host for this stack, or move the API to an
+   external service and use `next export` — not configured in this project.

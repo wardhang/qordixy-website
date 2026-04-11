@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cpanel": "next build && node scripts/prepare-cpanel.mjs",
+    "zip:cpanel": "node scripts/prepare-cpanel.mjs",
     "start": "next start",
     "lint": "eslint"
   },
@@ -20,6 +22,7 @@
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "archiver": "^7.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",

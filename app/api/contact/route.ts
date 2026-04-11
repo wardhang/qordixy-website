@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+/** Inbound address for contact-form enquiries. Override with CONTACT_TO_EMAIL in production. */
+const ENQUIRY_TO =
+  process.env.CONTACT_TO_EMAIL?.trim() || "wardhangupta.2011@gmail.com";
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -33,10 +37,10 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // Email to sales team
+    // Email to team
     await transporter.sendMail({
       from: `"QORDIXY Website" <${process.env.SMTP_USER}>`,
-      to: "sales@qordixy.com",
+      to: ENQUIRY_TO,
       replyTo: `"${name}" <${email}>`,
       subject: `New Project Enquiry${service ? ` — ${service}` : ""} from ${name}`,
       html: `
@@ -163,7 +167,7 @@ Submitted via qordixy.com
                 <tr>
                   <td style="background:#f4f6f9;padding:20px 40px;text-align:center;">
                     <p style="margin:0;font-size:12px;color:#999;">
-                      © ${new Date().getFullYear()} QORDIXY · <a href="mailto:sales@qordixy.com" style="color:#00DDEB;">sales@qordixy.com</a>
+                      © ${new Date().getFullYear()} QORDIXY · <a href="mailto:${ENQUIRY_TO}" style="color:#00DDEB;">${ENQUIRY_TO}</a>
                     </p>
                   </td>
                 </tr>
@@ -173,14 +177,16 @@ Submitted via qordixy.com
         </body>
         </html>
       `,
-      text: `Hi ${name},\n\nThanks for reaching out! We've received your message and will get back to you within 24 hours.\n\nBest,\nThe QORDIXY Team\nsales@qordixy.com`,
+      text: `Hi ${name},\n\nThanks for reaching out! We've received your message and will get back to you within 24 hours.\n\nBest,\nThe QORDIXY Team\n${ENQUIRY_TO}`,
     });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {
     console.error("[Contact API] Error:", err);
     return NextResponse.json(
-      { error: "Failed to send message. Please try again or email us directly at sales@qordixy.com." },
+      {
+        error: `Failed to send message. Please try again or email us directly at ${ENQUIRY_TO}.`,
+      },
       { status: 500 }
     );
   }

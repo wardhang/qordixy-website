@@ -20,6 +20,9 @@
 # production
 /build
 
+# cPanel deploy artifact (local only; do not commit)
+qordixy-cpanel-deploy.zip
+
 # misc
 .DS_Store
 *.pem
@@ -30,9 +33,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files — keep example templates, ignore real secrets
+# env files — ignore secrets and templates (templates not pushed; configure in Amplify / host UI)
 .env*
-!.env*.example
+.env.local.example
+.env.example
 
 # vercel
 .vercel
