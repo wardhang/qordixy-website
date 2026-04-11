@@ -7,8 +7,10 @@ QORDIXY — cPanel deployment (Next.js standalone)
    npm run build:cpanel
 
    This runs `next build` (standalone output), copies `public/` and
-   `.next/static/` into `.next/standalone/`, adds this file + `env.example`,
-   and creates `qordixy-cpanel-deploy.zip` in the project root — ready to upload.
+   `.next/static/` into `.next/standalone/`, removes macOS/Windows-only
+   `sharp`/`@img` binaries (so the same zip runs on Linux cPanel), adds
+   START-HERE.txt, this file + `env.example`, and writes
+   `qordixy-cpanel-deploy.zip` in the project root — ready to upload.
 
 2) (Optional) Manual zip instead: zip the CONTENTS of `.next/standalone/`:
 

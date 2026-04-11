@@ -1,10 +1,15 @@
 /**
  * After `next build` with `output: "standalone"`, Next.js does not copy
  * `public/` or `.next/static` into `.next/standalone/`. Both are required at runtime.
- * This script copies them, adds deploy helpers, and writes `qordixy-cpanel-deploy.zip`.
+ *
+ * Also removes `sharp` + `@img` from `standalone/node_modules`: those packages
+ * contain OS/arch-specific binaries. A zip built on macOS will crash on Linux
+ * (typical cPanel) if they are left in place.
+ *
+ * Finally writes `qordixy-cpanel-deploy.zip` for upload.
  */
 import archiver from "archiver";
-import { cp, copyFile, mkdir } from "node:fs/promises";
+import { cp, copyFile, mkdir, rm } from "node:fs/promises";
 import { createWriteStream } from "node:fs";
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -41,6 +46,17 @@ await mkdir(path.join(standalone, ".next"), { recursive: true });
 await cp(staticSrc, staticDest, { recursive: true, force: true });
 console.log("Copied .next/static/ → .next/standalone/.next/static/");
 
+const sharpPath = path.join(standalone, "node_modules", "sharp");
+const imgPath = path.join(standalone, "node_modules", "@img");
+if (existsSync(sharpPath)) {
+  await rm(sharpPath, { recursive: true, force: true });
+  console.log("Removed standalone node_modules/sharp (OS-specific; not portable in zip).");
+}
+if (existsSync(imgPath)) {
+  await rm(imgPath, { recursive: true, force: true });
+  console.log("Removed standalone node_modules/@img (native bindings; not portable in zip).");
+}
+
 const deployDoc = path.join(root, "CPANEL-DEPLOY.txt");
 const envExample = path.join(root, ".env.local.example");
 if (existsSync(deployDoc)) {
@@ -52,11 +68,26 @@ if (existsSync(envExample)) {
   console.log("Added env.example (copy to host env vars; do not commit secrets).");
 }
 
+const startHereSrc = path.join(root, "scripts", "cpanel-START-HERE.txt");
+const startHere = path.join(standalone, "START-HERE.txt");
+if (existsSync(startHereSrc)) {
+  await copyFile(startHereSrc, startHere);
+  console.log("Added START-HERE.txt to bundle.");
+}
+
 const bytesWritten = await new Promise((resolve, reject) => {
   const output = createWriteStream(zipPath);
   const archive = archiver("zip", { zlib: { level: 9 } });
+
+  const fail = (err) => reject(err);
+  output.on("error", fail);
+  archive.on("error", fail);
+  archive.on("warning", (err) => {
+    if (err.code !== "ENOENT") fail(err);
+  });
+
   output.on("close", () => resolve(archive.pointer()));
-  archive.on("error", reject);
+
   archive.pipe(output);
   archive.directory(standalone, false);
   archive.finalize();

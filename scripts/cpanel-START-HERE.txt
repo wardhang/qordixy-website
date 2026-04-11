@@ -1,0 +1,26 @@
+QORDIXY — quick start (cPanel / VPS)
+====================================
+
+1) Extract this zip so the application root contains:
+   - server.js
+   - package.json
+   - node_modules/
+   - public/
+   - .next/
+
+2) In cPanel Node.js Application Manager (or your process manager), set:
+   - Startup file: server.js   (or command: node server.js)
+   - Node version: 20.x or 22.x LTS recommended
+
+3) Environment variables (see env.example in this folder):
+   NODE_ENV=production
+   SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS
+   CONTACT_TO_EMAIL (optional)
+
+   PORT is usually assigned by the host; do not override unless you know the port.
+
+4) Start the app. The site and /api/contact need SMTP configured to send mail.
+
+Note: Native image packages (sharp) were removed from this bundle so the same
+zip works on Linux servers when built on macOS/Windows. Logos use static SVG;
+no runtime image sharp dependency is required.

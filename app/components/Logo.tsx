@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 // logo.svg viewBox: 800 × 227.74 → aspect ratio ≈ 3.51 : 1
 const ASPECT = 800 / 227.74;
 
@@ -22,14 +20,14 @@ export default function Logo({ variant = "dark", size = "md" }: LogoProps) {
       : undefined;
 
   return (
-    <Image
+    <img
       src="/logo.svg"
       alt="QORDIXY"
       width={w}
       height={h}
-      priority
       className="object-contain"
       style={style}
+      fetchPriority="high"
     />
   );
 }
