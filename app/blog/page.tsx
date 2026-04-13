@@ -106,12 +106,12 @@ export default function BlogIndexPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 bg-[#0A1F44]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {sortedPosts.map((post) => (
             <article
               key={post.slug}
-              className="group flex flex-col rounded-2xl border border-[#0A1F44]/10 bg-white shadow-[0_4px_24px_rgba(10,31,68,0.06)] overflow-hidden hover:border-[#00DDEB]/40 hover:shadow-[0_8px_32px_rgba(0,221,235,0.12)] transition-all duration-300"
+              className="group flex flex-col rounded-2xl border border-[#00DDEB]/20 bg-[#112347] shadow-[0_4px_24px_rgba(0,0,0,0.25)] overflow-hidden hover:border-[#00DDEB]/50 hover:shadow-[0_8px_32px_rgba(0,221,235,0.15)] transition-all duration-300"
             >
               <Link
                 href={`/blog/${post.slug}`}
@@ -127,20 +127,20 @@ export default function BlogIndexPage() {
                 />
               </Link>
               <div className="flex flex-col flex-1 p-6 sm:p-7">
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#8a9ab5] font-medium mb-3">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-white/45 font-medium mb-3">
                   <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
                   <span aria-hidden="true">·</span>
                   <span>{post.readTimeMinutes} min read</span>
                 </div>
-                <h2 className="font-heading font-bold text-[#0A1F44] text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#00b8c4] transition-colors">
+                <h2 className="font-heading font-bold text-white text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#00DDEB] transition-colors">
                   <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
-                <p className="text-[#8a9ab5] text-sm leading-relaxed flex-1 line-clamp-3 mb-5">
+                <p className="text-white/55 text-sm leading-relaxed flex-1 line-clamp-3 mb-5">
                   {post.excerpt}
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wider text-[#00DDEB] hover:text-[#0A1F44] transition-colors mt-auto"
+                  className="inline-flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wider text-[#00DDEB] hover:text-white transition-colors mt-auto"
                 >
                   Read more
                   <svg

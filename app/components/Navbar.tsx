@@ -13,22 +13,26 @@ const navLinks = [
   { label: "Contact", href: "/#contact" },
 ] as const;
 
-export default function Navbar() {
+export default function Navbar({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleNavClick = () => setMobileOpen(false);
 
+  /** Blog layout passes `solid` so the bar stays navy (same as homepage scrolled). No usePathname—avoids import/runtime issues. */
+  const solidBar = solid || scrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        solidBar
           ? "bg-[#0A1F44]/95 backdrop-blur-md shadow-[0_2px_24px_rgba(0,0,0,0.4)]"
           : "bg-transparent"
       }`}
@@ -36,12 +40,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
 
-          {/* Logo */}
           <Link href="/" aria-label="QORDIXY Home">
             <Logo variant="light" size="md" />
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
             {navLinks.map((link) =>
               link.href === "/blog" ? (
@@ -64,7 +66,6 @@ export default function Navbar() {
             )}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:block">
             <a
               href="/#contact"
@@ -74,7 +75,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -87,7 +87,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
           mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

@@ -40,8 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [
         {
           url: ogImage,
-          width: 1600,
-          height: 420,
+          width: 1376,
+          height: 768,
           alt: post.bannerAlt,
         },
       ],
@@ -139,24 +139,26 @@ export default async function BlogPostPage({ params }: Props) {
 
       <header className="relative w-full overflow-hidden bg-[#060f22]">
         <div
-          className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"
+          className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none z-0"
           aria-hidden="true"
         />
-        <figure className="relative w-full max-h-[min(52vh,520px)]">
+        {/* Aspect-ratio box reserves height so SVG/PNG banners always paint (avoids collapsed img with max-h + h-auto). */}
+        <figure className="relative z-[1] w-full max-w-[1600px] mx-auto aspect-[1600/420] min-h-[120px]">
           <img
             src={post.bannerSrc}
             alt={post.bannerAlt}
-            width={1600}
-            height={420}
-            className="w-full h-auto object-cover max-h-[min(52vh,520px)] object-center"
+            width={1376}
+            height={768}
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center"
             fetchPriority="high"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-t from-[#060f22]/90 via-transparent to-transparent pointer-events-none"
+            className="absolute inset-0 bg-gradient-to-t from-[#060f22] via-[#060f22]/20 to-transparent pointer-events-none"
             aria-hidden="true"
           />
         </figure>
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 -mt-16 sm:-mt-20">
+        <div className="relative z-[2] max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-6 sm:pt-8">
           <nav className="text-sm text-white/60 mb-6" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li>
@@ -197,16 +199,18 @@ export default async function BlogPostPage({ params }: Props) {
       </header>
 
       <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 pb-20">
-        <BlogArticleBody sections={post.sections} />
+        <div className="rounded-2xl border border-[#00DDEB]/20 bg-[#112347] px-6 sm:px-8 py-8 sm:py-10 shadow-[0_4px_32px_rgba(0,0,0,0.2)]">
+          <BlogArticleBody sections={post.sections} variant="dark" />
+        </div>
       </article>
 
       {related.length > 0 && (
         <aside
-          className="border-t border-[#0A1F44]/10 bg-[#f4f6f9] py-14 sm:py-16"
+          className="border-t border-[#00DDEB]/15 bg-[#060f22] py-14 sm:py-16"
           aria-label="Related articles"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-bold text-[#0A1F44] text-xl sm:text-2xl mb-8">
+            <h2 className="font-heading font-bold text-white text-xl sm:text-2xl mb-8">
               More insights
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -214,7 +218,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link
                   key={p.slug}
                   href={`/blog/${p.slug}`}
-                  className="group flex gap-4 rounded-xl bg-white p-4 border border-[#0A1F44]/08 hover:border-[#00DDEB]/35 transition-colors shadow-sm"
+                  className="group flex gap-4 rounded-xl bg-[#112347] p-4 border border-[#00DDEB]/15 hover:border-[#00DDEB]/45 transition-colors"
                 >
                   <img
                     src={p.thumbnailSrc}
@@ -225,10 +229,10 @@ export default async function BlogPostPage({ params }: Props) {
                     loading="lazy"
                   />
                   <div className="min-w-0">
-                    <p className="font-heading font-semibold text-[#0A1F44] text-sm leading-snug group-hover:text-[#00b8c4] transition-colors line-clamp-2">
+                    <p className="font-heading font-semibold text-white text-sm leading-snug group-hover:text-[#00DDEB] transition-colors line-clamp-2">
                       {p.title}
                     </p>
-                    <p className="text-xs text-[#8a9ab5] mt-1">{p.readTimeMinutes} min read</p>
+                    <p className="text-xs text-white/45 mt-1">{p.readTimeMinutes} min read</p>
                   </div>
                 </Link>
               ))}

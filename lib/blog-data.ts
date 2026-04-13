@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-01-08",
     readTimeMinutes: 9,
     thumbnailSrc: "/blog/thumbnails/ai-development-trends-2025.svg",
-    bannerSrc: "/blog/banners/ai-development-trends-2025.svg",
+    bannerSrc: "/blog/banners/ai-development-trends-2025.png",
     thumbnailAlt: "Abstract neural network motif on deep blue—AI development article",
     bannerAlt: "Wide banner: AI development trends and production ML for 2025",
     sections: [
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-01-08",
     readTimeMinutes: 8,
     thumbnailSrc: "/blog/thumbnails/smart-contract-utility-modern-business.svg",
-    bannerSrc: "/blog/banners/smart-contract-utility-modern-business.svg",
+    bannerSrc: "/blog/banners/smart-contract-utility-modern-business.png",
     thumbnailAlt: "Geometric chain blocks on cyan grid—smart contract utility article",
     bannerAlt: "Wide banner: smart contracts and business utility beyond hype",
     sections: [
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-01-08",
     readTimeMinutes: 10,
     thumbnailSrc: "/blog/thumbnails/types-of-smart-contracts-guide.svg",
-    bannerSrc: "/blog/banners/types-of-smart-contracts-guide.svg",
+    bannerSrc: "/blog/banners/types-of-smart-contracts-guide.png",
     thumbnailAlt: "Layered document and token icons—types of smart contracts guide",
     bannerAlt: "Wide banner: guide to different smart contract categories",
     sections: [
@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-01-08",
     readTimeMinutes: 8,
     thumbnailSrc: "/blog/thumbnails/agentic-ai-software-delivery.svg",
-    bannerSrc: "/blog/banners/agentic-ai-software-delivery.svg",
+    bannerSrc: "/blog/banners/agentic-ai-software-delivery.png",
     thumbnailAlt: "Connected nodes and workflow arrows—agentic AI delivery article",
     bannerAlt: "Wide banner: agentic AI and software delivery practices",
     sections: [
@@ -308,7 +308,7 @@ export const blogPosts: BlogPost[] = [
     updatedAt: "2026-01-08",
     readTimeMinutes: 9,
     thumbnailSrc: "/blog/thumbnails/defi-smart-contract-security-patterns.svg",
-    bannerSrc: "/blog/banners/defi-smart-contract-security-patterns.svg",
+    bannerSrc: "/blog/banners/defi-smart-contract-security-patterns.png",
     thumbnailAlt: "Shield and chain motif—DeFi smart contract security article",
     bannerAlt: "Wide banner: DeFi smart contract security patterns",
     sections: [

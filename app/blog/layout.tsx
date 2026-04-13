@@ -8,8 +8,8 @@ export default function BlogLayout({
 }>) {
   return (
     <>
-      <Navbar />
-      <div className="min-h-screen flex flex-col bg-white">
+      <Navbar solid />
+      <div className="min-h-screen flex flex-col bg-[#0A1F44]">
         <main
           id="main-content"
           tabIndex={-1}
