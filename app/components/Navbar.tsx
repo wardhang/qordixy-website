@@ -5,12 +5,13 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Tech Stack", href: "#tech-stack" },
-  { label: "Contact", href: "#contact" },
-];
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "Why Us", href: "/#why-us" },
+  { label: "Tech Stack", href: "/#tech-stack" },
+  { label: "Blogs", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
+] as const;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,22 +42,32 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors duration-200 uppercase tracking-wider"
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
+            {navLinks.map((link) =>
+              link.href === "/blog" ? (
+                <Link
+                  key={link.label}
+                  href="/blog"
+                  className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors duration-200 uppercase tracking-wider"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors duration-200 uppercase tracking-wider"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="/#contact"
               className="font-heading text-sm font-semibold uppercase tracking-wider px-6 py-2.5 rounded-full border border-[#00DDEB] text-[#00DDEB] hover:bg-[#00DDEB] hover:text-[#0A1F44] transition-all duration-300"
             >
               Get Started
@@ -83,18 +94,29 @@ export default function Navbar() {
         }`}
       >
         <div className="bg-[#0A1F44] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={handleNavClick}
-              className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors uppercase tracking-wider py-2"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href === "/blog" ? (
+              <Link
+                key={link.label}
+                href="/blog"
+                onClick={handleNavClick}
+                className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors uppercase tracking-wider py-2"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={handleNavClick}
+                className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors uppercase tracking-wider py-2"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={handleNavClick}
             className="font-heading text-sm font-semibold uppercase tracking-wider px-6 py-2.5 rounded-full border border-[#00DDEB] text-[#00DDEB] text-center mt-2"
           >

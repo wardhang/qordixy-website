@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-label="Agentic AI software delivery banner">
+  <defs>
+    <linearGradient id="b4" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#112347"/>
+      <stop offset="100%" style="stop-color:#060f22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="420" fill="url(#b4)"/>
+  <circle cx="1350" cy="80" r="200" fill="#00DDEB" opacity="0.05"/>
+  <text x="800" y="195" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,sans-serif" font-size="38" font-weight="800">Agentic AI &amp; Software Delivery</text>
+  <text x="800" y="248" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="17" letter-spacing="0.16em">TOOLS · MEMORY · OBSERVABILITY</text>
+</svg>

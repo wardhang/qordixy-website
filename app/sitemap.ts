@@ -1,8 +1,16 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const BASE_URL = "https://qordixy.com";
   const now = new Date();
+
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(`${post.updatedAt}T12:00:00Z`),
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
 
   return [
     {
@@ -11,6 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    ...blogEntries,
     {
       url: `${BASE_URL}/#services`,
       lastModified: now,

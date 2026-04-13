@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="DeFi security">
+  <defs>
+    <linearGradient id="g5" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#060f22"/>
+      <stop offset="100%" style="stop-color:#0A1F44"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g5)"/>
+  <path d="M400 120 L480 200 L440 300 L360 300 L320 200 Z" fill="none" stroke="#00DDEB" stroke-width="2" opacity="0.55"/>
+  <path d="M400 160 L450 215 L425 275 L375 275 L350 215 Z" fill="#00DDEB" opacity="0.15" stroke="#00DDEB" stroke-width="1.5"/>
+  <text x="400" y="420" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="20" font-weight="700" letter-spacing="0.12em">DEFI SECURITY</text>
+</svg>

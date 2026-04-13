@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-label="DeFi smart contract security banner">
+  <rect width="1600" height="420" fill="#060f22"/>
+  <rect x="0" y="200" width="1600" height="4" fill="#00DDEB" opacity="0.15"/>
+  <text x="800" y="185" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,sans-serif" font-size="34" font-weight="800">DeFi Smart Contract Security</text>
+  <text x="800" y="238" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="16" letter-spacing="0.18em">REENTRANCY · ORACLES · GOVERNANCE</text>
+</svg>

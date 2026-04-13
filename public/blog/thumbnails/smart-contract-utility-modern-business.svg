@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Smart contract utility">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0A1F44"/>
+      <stop offset="100%" style="stop-color:#1a3460"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g2)"/>
+  <g stroke="#00DDEB" fill="none" stroke-width="2" opacity="0.5">
+    <rect x="220" y="160" width="140" height="100" rx="8"/>
+    <rect x="440" y="160" width="140" height="100" rx="8"/>
+    <path d="M360 210 H440"/>
+    <circle cx="400" cy="210" r="8" fill="#00DDEB" stroke="none"/>
+  </g>
+  <text x="400" y="420" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="20" font-weight="700" letter-spacing="0.12em">SMART CONTRACTS</text>
+</svg>

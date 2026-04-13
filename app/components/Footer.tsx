@@ -12,10 +12,11 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us",       href: "#about" },
-  { label: "Why Choose Us",  href: "#why-us" },
-  { label: "Tech Stack",     href: "#tech-stack" },
-  { label: "Contact",        href: "#contact" },
+  { label: "About Us",       href: "/#about" },
+  { label: "Why Choose Us",  href: "/#why-us" },
+  { label: "Tech Stack",     href: "/#tech-stack" },
+  { label: "Blogs",          href: "/blog" },
+  { label: "Contact",        href: "/#contact" },
 ];
 
 const socialLinks = [
@@ -89,10 +90,18 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-2.5 sm:space-y-3">
+              <li>
+                <a
+                  href="/blog"
+                  className="text-white/50 text-sm hover:text-[#00DDEB] transition-colors duration-200"
+                >
+                  Blogs &amp; insights
+                </a>
+              </li>
               {serviceLinks.map((service) => (
                 <li key={service}>
                   <a
-                    href="#services"
+                    href="/#services"
                     className="text-white/50 text-sm hover:text-[#00DDEB] transition-colors duration-200"
                   >
                     {service}
@@ -144,7 +153,7 @@ export default function Footer() {
                 Global — Remote-First
               </p>
               <a
-                href="#contact"
+                href="/#contact"
                 className="inline-flex items-center gap-2 font-heading text-xs font-semibold uppercase tracking-wider text-[#00DDEB] border border-[#00DDEB]/30 rounded-full px-4 py-2 hover:bg-[#00DDEB]/10 transition-all duration-200"
               >
                 Start a Project

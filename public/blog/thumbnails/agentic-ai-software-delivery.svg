@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Agentic AI">
+  <defs>
+    <linearGradient id="g4" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A1F44"/>
+      <stop offset="100%" style="stop-color:#112347"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g4)"/>
+  <g stroke="#00DDEB" fill="none" stroke-width="1.5" opacity="0.45">
+    <rect x="250" y="130" width="300" height="180" rx="12"/>
+    <path d="M310 220 L370 220 M430 220 L490 220"/>
+    <polygon points="400,170 420,200 380,200" fill="#00DDEB" stroke="none" opacity="0.6"/>
+    <path d="M400 200 L400 280 M400 280 L340 340 M400 280 L460 340"/>
+  </g>
+  <text x="400" y="420" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="20" font-weight="700" letter-spacing="0.14em">AGENTIC AI</text>
+</svg>
