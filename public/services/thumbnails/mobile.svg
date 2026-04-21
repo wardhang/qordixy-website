@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Mobile development thumbnail">
+  <rect width="800" height="500" fill="#0A1F44"/>
+  <g stroke="#00DDEB" fill="none" opacity="0.55" stroke-width="2">
+    <rect x="320" y="120" width="160" height="260" rx="22"/>
+    <path d="M320 160 H480" opacity="0.55"/>
+    <circle cx="400" cy="350" r="8" fill="#00DDEB" opacity="0.22" stroke="none"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="18" font-weight="700" letter-spacing="0.12em">MOBILE</text>
+</svg>
+

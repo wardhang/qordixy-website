@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-label="DApp development banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#112347"/>
+      <stop offset="100%" stop-color="#060f22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="420" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#00DDEB" fill="none" stroke-width="1.6">
+    <circle cx="1240" cy="210" r="110"/>
+    <path d="M1130 210 H1350"/>
+    <path d="M1240 100 V320"/>
+    <path d="M1165 140 C 1210 175, 1270 175, 1315 140"/>
+    <path d="M1165 280 C 1210 245, 1270 245, 1315 280"/>
+  </g>
+  <g opacity="0.20" fill="#00DDEB">
+    <circle cx="520" cy="140" r="8" opacity="0.55"/>
+    <circle cx="600" cy="230" r="6" opacity="0.45"/>
+    <circle cx="700" cy="170" r="7" opacity="0.50"/>
+    <circle cx="820" cy="250" r="8" opacity="0.55"/>
+    <circle cx="930" cy="160" r="6" opacity="0.45"/>
+  </g>
+  <g opacity="0.12" stroke="#00DDEB" fill="none" stroke-width="1">
+    <path d="M520 140 L600 230 L700 170 L820 250 L930 160"/>
+  </g>
+</svg>
+

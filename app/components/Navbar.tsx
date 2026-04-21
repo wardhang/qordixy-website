@@ -5,7 +5,7 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/#about" },
   { label: "Why Us", href: "/#why-us" },
   { label: "Tech Stack", href: "/#tech-stack" },
@@ -46,10 +46,10 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
             {navLinks.map((link) =>
-              link.href === "/blog" ? (
+              link.href === "/blog" || link.href === "/services" ? (
                 <Link
                   key={link.label}
-                  href="/blog"
+                  href={link.href}
                   className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors duration-200 uppercase tracking-wider"
                 >
                   {link.label}
@@ -94,10 +94,10 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
       >
         <div className="bg-[#0A1F44] border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           {navLinks.map((link) =>
-            link.href === "/blog" ? (
+            link.href === "/blog" || link.href === "/services" ? (
               <Link
                 key={link.label}
-                href="/blog"
+                href={link.href}
                 onClick={handleNavClick}
                 className="font-heading text-sm font-medium text-white/70 hover:text-[#00DDEB] transition-colors uppercase tracking-wider py-2"
               >

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Web development thumbnail">
+  <rect width="800" height="500" fill="#0A1F44"/>
+  <g stroke="#00DDEB" fill="none" opacity="0.5" stroke-width="2" stroke-linecap="round">
+    <path d="M290 185 L240 240 L290 295"/>
+    <path d="M510 185 L560 240 L510 295"/>
+    <path d="M360 310 L440 170"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="18" font-weight="700" letter-spacing="0.12em">WEB</text>
+</svg>
+

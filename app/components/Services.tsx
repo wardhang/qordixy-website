@@ -105,6 +105,17 @@ const services = [
   },
 ];
 
+const serviceSlugById: Record<string, string> = {
+  ai: "ai-development",
+  agentic: "agentic-ai-systems",
+  blockchain: "blockchain-smart-contracts",
+  dapp: "dapp-development",
+  web: "web-design-development",
+  mobile: "mobile-app-development",
+  custom: "custom-software-development",
+  "erp-crm": "erp-crm-development",
+};
+
 export default function Services() {
   return (
     <section id="services" aria-label="Our Services" className="relative py-20 sm:py-28 bg-white overflow-hidden">
@@ -139,9 +150,10 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {services.map((service) => (
-            <article
+            <a
               key={service.id}
-              className="service-card gradient-border group bg-[#0A1F44] rounded-2xl p-6 sm:p-8 cursor-pointer"
+              href={`/services/${serviceSlugById[service.id] ?? "services"}`}
+              className="service-card gradient-border group bg-[#0A1F44] rounded-2xl p-6 sm:p-8 cursor-pointer block"
               aria-label={service.title}
             >
               <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-[#00DDEB]/10 border border-[#00DDEB]/20 flex items-center justify-center text-[#00DDEB] group-hover:bg-[#00DDEB]/20 transition-colors mb-5 sm:mb-6">
@@ -166,12 +178,21 @@ export default function Services() {
                   </span>
                 ))}
               </div>
-            </article>
+            </a>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 sm:mt-14">
+        <div className="text-center mt-12 sm:mt-14 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 font-heading font-semibold text-sm uppercase tracking-wider text-[#0A1F44] hover:text-[#00DDEB] transition-colors duration-200"
+          >
+            View all services
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 font-heading font-semibold text-sm uppercase tracking-wider text-[#0A1F44] hover:text-[#00DDEB] transition-colors duration-200"

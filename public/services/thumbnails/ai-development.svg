@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="AI development thumbnail">
+  <rect width="800" height="500" fill="#0A1F44"/>
+  <g fill="none" stroke="#00DDEB" stroke-width="1.5" opacity="0.55">
+    <path d="M120 360 L240 170 L400 300 L560 160 L680 340"/>
+    <circle cx="240" cy="170" r="7" fill="#00DDEB" opacity="0.35" stroke="none"/>
+    <circle cx="400" cy="300" r="7" fill="#00DDEB" opacity="0.35" stroke="none"/>
+    <circle cx="560" cy="160" r="7" fill="#00DDEB" opacity="0.35" stroke="none"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="20" font-weight="700" letter-spacing="0.14em">AI</text>
+</svg>
+

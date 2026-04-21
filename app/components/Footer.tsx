@@ -15,6 +15,7 @@ const companyLinks = [
   { label: "About Us",       href: "/#about" },
   { label: "Why Choose Us",  href: "/#why-us" },
   { label: "Tech Stack",     href: "/#tech-stack" },
+  { label: "Services",       href: "/services" },
   { label: "Blogs",          href: "/blog" },
   { label: "Contact",        href: "/#contact" },
 ];
@@ -90,6 +91,14 @@ export default function Footer() {
               Services
             </h3>
             <ul className="space-y-2.5 sm:space-y-3">
+              <li>
+                <a
+                  href="/services"
+                  className="text-white/50 text-sm hover:text-[#00DDEB] transition-colors duration-200"
+                >
+                  View all services
+                </a>
+              </li>
               <li>
                 <a
                   href="/blog"

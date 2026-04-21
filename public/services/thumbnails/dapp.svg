@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="DApp thumbnail">
+  <rect width="800" height="500" fill="#0A1F44"/>
+  <g stroke="#00DDEB" fill="none" opacity="0.5" stroke-width="1.8">
+    <circle cx="420" cy="235" r="90"/>
+    <path d="M330 235 H510"/>
+    <path d="M420 145 V325"/>
+  </g>
+  <text x="400" y="430" text-anchor="middle" fill="#00DDEB" font-family="system-ui,sans-serif" font-size="18" font-weight="700" letter-spacing="0.12em">DAPP</text>
+</svg>
+

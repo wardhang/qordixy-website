@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="420" viewBox="0 0 1600 420" role="img" aria-label="Agentic AI systems banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A1F44"/>
+      <stop offset="100%" stop-color="#060f22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="420" fill="url(#bg)"/>
+  <g opacity="0.20" stroke="#00DDEB" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="330" cy="170" r="44"/>
+    <circle cx="520" cy="250" r="30"/>
+    <circle cx="740" cy="160" r="36"/>
+    <circle cx="980" cy="235" r="40"/>
+    <circle cx="1210" cy="165" r="28"/>
+    <path d="M365 190 L492 235"/>
+    <path d="M548 230 L705 175"/>
+    <path d="M775 175 L942 220"/>
+    <path d="M1018 215 L1185 175"/>
+    <path d="M330 170 C 390 120, 470 120, 520 250" opacity="0.55"/>
+    <path d="M740 160 C 790 260, 900 290, 980 235" opacity="0.55"/>
+  </g>
+  <g opacity="0.10" fill="#00DDEB">
+    <polygon points="1400,60 1460,95 1460,165 1400,200 1340,165 1340,95" />
+  </g>
+</svg>
+
