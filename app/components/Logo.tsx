@@ -1,5 +1,5 @@
-// logo.svg viewBox: 800 × 227.74 → aspect ratio ≈ 3.51 : 1
-const ASPECT = 800 / 227.74;
+// logo.png: 1024 × 291 → aspect ratio ≈ 3.5189 : 1
+const ASPECT = 1024 / 291;
 
 interface LogoProps {
   variant?: "dark" | "light";
@@ -21,7 +21,7 @@ export default function Logo({ variant = "dark", size = "md" }: LogoProps) {
 
   return (
     <img
-      src="/logo.svg"
+      src="/logo.png"
       alt="QORDIXY"
       width={w}
       height={h}

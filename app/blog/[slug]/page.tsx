@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: Props) {
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.svg`,
+        url: `${SITE_URL}/logo.png`,
       },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
