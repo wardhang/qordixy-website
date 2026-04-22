@@ -81,9 +81,9 @@ export const metadata: Metadata = {
       "Next-generation technology solutions across AI, agentic systems, blockchain, and full-stack digital products. Built for scale.",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.svg",
         width: 1024,
-        height: 291,
+        height: 280,
         alt: "QORDIXY — AI, Blockchain & Digital Transformation",
       },
     ],
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     title: "QORDIXY — AI, Blockchain & Digital Transformation",
     description:
       "Next-generation technology solutions across AI, agentic systems, blockchain, and full-stack digital products.",
-    images: ["/logo.png"],
+    images: ["/logo.svg"],
   },
 
   icons: {
@@ -118,7 +118,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "QORDIXY",
   url: BASE_URL,
-  logo: `${BASE_URL}/logo.png`,
+  logo: `${BASE_URL}/logo.svg`,
   description:
     "QORDIXY is a next-generation technology company delivering AI, blockchain, and full-stack digital solutions.",
   contactPoint: {

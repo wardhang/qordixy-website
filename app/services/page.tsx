@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     siteName: "QORDIXY",
     images: [
       {
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/logo.svg`,
         width: 1024,
-        height: 291,
+        height: 280,
         alt: "QORDIXY",
       },
     ],
